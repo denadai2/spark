@@ -1644,7 +1644,7 @@ class DataFrame(PandasMapOpsMixin, PandasConversionMixin):
     @overload
     def sample(
         self,
-        withReplacement: Optional[bool],
+        withReplacement: bool = False,
         fraction: float,
         seed: Optional[int] = ...,
     ) -> "DataFrame":
@@ -1652,7 +1652,7 @@ class DataFrame(PandasMapOpsMixin, PandasConversionMixin):
 
     def sample(  # type: ignore[misc]
         self,
-        withReplacement: Optional[Union[float, bool]] = None,
+        withReplacement: bool = False,
         fraction: Optional[Union[int, float]] = None,
         seed: Optional[int] = None,
     ) -> "DataFrame":
